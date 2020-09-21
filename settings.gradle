@@ -1,0 +1,2 @@
+rootProject.name='FInd Me Recipe'
+include ':app'

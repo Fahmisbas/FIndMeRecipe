@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Find Me a Recipe</string>
+    <string name="hint_friedrice">Fried Rice</string>
+    <string name="search">Search</string>
+    <string name="appname">FIND ME A RECIPE</string>
+    <string name="error_message">Something went wrong. \nTry again later.</string>
+    <string name="warning_empty_field_message">Field cannot be left blank!</string>
+    <string name="developer_name">Revelate Studio</string>
+</resources>
