@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.fahmisbas.findmerecipe.R
+import com.fahmisbas.findmerecipe.data.Data
 import com.fahmisbas.findmerecipe.ui.activities.recipedetail.RecipeWebViewActivity
 import com.fahmisbas.findmerecipe.ui.activities.recipedetail.RecipeWebViewActivity.Companion.EXTRA_RECIPE_NAME
 import com.fahmisbas.findmerecipe.ui.activities.recipedetail.RecipeWebViewActivity.Companion.EXTRA_RECIPE_URL
@@ -87,15 +88,21 @@ class RecipeListActivity : AppCompatActivity() {
     private fun observeData() {
         viewModel.apply {
             recipes.observe(this@RecipeListActivity, Observer { dataList ->
-                if (dataList.isNotEmpty()) {
-                    recipeListAdapter.updateList(dataList)
-                    loading.gone()
-                } else loading.visible()
+                updateList(dataList)
             })
             error.observe(this@RecipeListActivity, Observer { isError ->
                 displayError(isError)
             })
         }
+    }
+
+    private fun updateList(dataList: List<Data>) {
+        if (dataList.isNotEmpty()) {
+            recipeListAdapter.updateList(dataList)
+        } else {
+            tvNotFound.visible()
+        }
+        loading.gone()
     }
 
     private fun displayError(isError: Boolean) {

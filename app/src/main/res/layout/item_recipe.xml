@@ -5,15 +5,18 @@
     android:layout_width="@dimen/_160sdp"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    android:background="?selectableItemBackground"
     app:cardCornerRadius="@dimen/_10sdp">
 
     <LinearLayout
+        android:id="@+id/recipeDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_gravity="center"
         android:layout_margin="@dimen/_10sdp"
         android:orientation="vertical">
-
 
         <ImageView
             android:id="@+id/imgRecipe"
@@ -57,14 +60,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
                 android:textSize="@dimen/_11ssp"
                 tools:text="Servings : 6" />
-
-            <Button
-                android:id="@+id/recipeDetail"
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_25sdp"
-                android:layout_marginTop="@dimen/margin_vertical"
-                android:background="@drawable/btn_ripple_effect"
-                android:text="Recipe" />
 
         </LinearLayout>
     </LinearLayout>
